@@ -12546,7 +12546,8 @@ function _typeof(obj) {
   },
   computed: {
     getTotalPages: function getTotalPages() {
-      return Math.ceil(this.data.length / this.maxItemsx);
+      const totalLength = this.sst && this.total ? this.total : this.data.length;
+      return Math.ceil(totalLength / this.maxItemsx);
     },
     getTotalPagesSearch: function getTotalPagesSearch() {
       return Math.ceil(this.queriedResults.length / this.maxItems);
